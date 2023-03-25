@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import slaughterHouse.model.Animal;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -22,9 +21,11 @@ public interface IAnimalService {
 
     List<Animal> getAnimalByOrigin(String originOfAnimal);
 
+    List<Animal> getAnimalByType(String type);
+
     //Update
     Animal updateAnimalInformation(Long id, Animal animal);
 
     //Delete
-    void removeAnimal(Long id);
+    String removeAnimal(Long id);
 }

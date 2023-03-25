@@ -15,14 +15,16 @@ public class Animal {
     private int weight;
     private LocalDate arrivalDate;
     private String origin;
+    private String type;
 
     public Animal() {
     }
 
-    public Animal(int weight, LocalDate arrivalDate, String origin) {
+    public Animal(int weight, LocalDate arrivalDate, String origin, String type) {
         this.weight = weight;
         this.arrivalDate = arrivalDate;
         this.origin = origin;
+        this.type = type;
     }
 
     public void setRegistrationNumber(Long registrationNumber) {
@@ -57,17 +59,25 @@ public class Animal {
         this.origin = animalOrigin;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Animal animal = (Animal) o;
-        return weight == animal.weight && Objects.equals(registrationNumber, animal.registrationNumber) && Objects.equals(arrivalDate, animal.arrivalDate) && Objects.equals(origin, animal.origin);
+        return weight == animal.weight && Objects.equals(registrationNumber, animal.registrationNumber) && Objects.equals(arrivalDate, animal.arrivalDate) && Objects.equals(origin, animal.origin) && Objects.equals(type, animal.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(registrationNumber, weight, arrivalDate, origin);
+        return Objects.hash(registrationNumber, weight, arrivalDate, origin, type);
     }
 
     @Override
@@ -76,7 +86,8 @@ public class Animal {
                 "registrationNumber=" + registrationNumber +
                 ", weight=" + weight +
                 ", arrivalDate=" + arrivalDate +
-                ", animalOrigin='" + origin + '\'' +
+                ", origin='" + origin + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

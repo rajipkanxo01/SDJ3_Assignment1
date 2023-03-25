@@ -10,6 +10,9 @@ import java.util.List;
 @Repository
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
     List<Animal> findByOrigin(String origin);
+
     List<Animal> findByArrivalDate(LocalDate arrivalDate);
+
+    List<Animal> findByType(String type);
 }
 

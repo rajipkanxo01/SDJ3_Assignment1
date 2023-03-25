@@ -1,15 +1,12 @@
 package slaughterHouse.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import slaughterHouse.exception.AnimalNotFoundException;
 import slaughterHouse.model.Animal;
 import slaughterHouse.repository.AnimalRepository;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,9 +15,12 @@ public class AnimalService implements IAnimalService {
 
     private AnimalRepository animalRepository;
 
-    @Autowired
+    //    @Autowired
     public AnimalService(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
+
+        addAnimal(new Animal(20, LocalDate.of(2023, 1, 10), "ArlaFoods", "Goat"));
+
     }
 
     @Override
@@ -48,13 +48,30 @@ public class AnimalService implements IAnimalService {
         return animalRepository.findByOrigin(originOfAnimal);
     }
 
+    @Override
+    public List<Animal> getAnimalByType(String type) {
+        return animalRepository.findByType(type);
+    }
+
 
     @Override
-    public Animal updateAnimalInformation(Long id, Animal animal) {
+    public Animal updateAnimalInformation(Long registrationNumber, Animal newAnimal) {
+        Optional<Animal> existingUser = Optional.ofNullable(animalRepository.findById(registrationNumber).orElseThrow(() -> new AnimalNotFoundException(registrationNumber)));
+        existingUser.map(animal -> {
+            animal.setOrigin(newAnimal.getOrigin());
+            animal.setArrivalDate(newAnimal.getArrivalDate());
+            animal.setWeight(newAnimal.getWeight());
+            animal.setType(newAnimal.getType());
+            System.out.println(animalRepository.save(animal));
+            return animalRepository.save(animal);
+        });
         return null;
     }
 
     @Override
-    public void removeAnimal(Long id) {
+    public String removeAnimal(Long id) {
+        String response = "Animal with " + id + " successfully deleted";
+        animalRepository.delete(getAnimalById(id));
+        return response;
     }
 }
