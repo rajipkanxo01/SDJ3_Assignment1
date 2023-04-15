@@ -1,11 +1,11 @@
-package slaughterHouse.controller;
+package slaughterHouse.restAPI.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import slaughterHouse.model.Animal;
-import slaughterHouse.service.IAnimalService;
+import slaughterHouse.shared.model.AnimalEntity;
+import slaughterHouse.restAPI.service.IAnimalService;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -19,9 +19,9 @@ public class AnimalController {
     private IAnimalService animalService;
 
     @PostMapping
-    public ResponseEntity<Animal> addAnimal(@RequestBody Animal animal) {
+    public ResponseEntity<AnimalEntity> addAnimal(@RequestBody AnimalEntity animalEntity) {
         try {
-            Animal createdAnimals = animalService.addAnimal(animal);
+            AnimalEntity createdAnimals = animalService.addAnimal(animalEntity);
             return new ResponseEntity<>(createdAnimals, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -29,7 +29,7 @@ public class AnimalController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Animal>> getAllAnimals() {
+    public ResponseEntity<List<AnimalEntity>> getAllAnimals() {
         try {
             return new ResponseEntity<>(animalService.getAllAnimals(), HttpStatus.OK);
         } catch (Exception e) {
@@ -38,7 +38,7 @@ public class AnimalController {
     }
 
     @GetMapping("/{registrationNumber}")
-    public ResponseEntity<Animal> getAnimalById(@PathVariable Long registrationNumber) {
+    public ResponseEntity<AnimalEntity> getAnimalById(@PathVariable Long registrationNumber) {
         try {
             return new ResponseEntity<>(animalService.getAnimalById(registrationNumber), HttpStatus.OK);
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class AnimalController {
     }
 
     @GetMapping("/origin/{origin}")
-    public ResponseEntity<List<Animal>> getAnimalsByOrigin(@PathVariable("origin") String origin) {
+    public ResponseEntity<List<AnimalEntity>> getAnimalsByOrigin(@PathVariable("origin") String origin) {
         try {
 
             return new ResponseEntity<>(animalService.getAnimalByOrigin(origin), HttpStatus.OK);
@@ -57,7 +57,7 @@ public class AnimalController {
     }
 
     @GetMapping("/date/{date}")
-    public ResponseEntity<List<Animal>> getAnimalByDate(@PathVariable("date") String date) {
+    public ResponseEntity<List<AnimalEntity>> getAnimalByDate(@PathVariable("date") String date) {
         try {
             return new ResponseEntity<>(animalService.getAnimalByDate(LocalDate.parse(date)), HttpStatus.OK);
         } catch (Exception e) {
@@ -66,7 +66,7 @@ public class AnimalController {
     }
 
     @GetMapping("/type/{type}")
-    public ResponseEntity<List<Animal>> getAnimalByType(@PathVariable String type) {
+    public ResponseEntity<List<AnimalEntity>> getAnimalByType(@PathVariable String type) {
         try {
             return ResponseEntity.ok(animalService.getAnimalByType(type));
         } catch (Exception e) {
@@ -75,9 +75,9 @@ public class AnimalController {
     }
 
     @PutMapping("/{registrationNumber}")
-    public ResponseEntity<Animal> updateAnimals(@PathVariable Long registrationNumber, @RequestBody Animal animal) {
+    public ResponseEntity<AnimalEntity> updateAnimals(@PathVariable Long registrationNumber, @RequestBody AnimalEntity animalEntity) {
         try {
-            return ok(animalService.updateAnimalInformation(registrationNumber, animal));
+            return ok(animalService.updateAnimalInformation(registrationNumber, animalEntity));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }

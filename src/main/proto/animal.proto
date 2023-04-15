@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "slaughterHouse.grpc.protobuf";
+
+
+
+service AnimalService {
+  rpc findAnimalById(id) returns (AnimalProto) {}
+  rpc findAllAnimals(empty) returns (AnimalListProto) {}
+  rpc findAnimalsByOrigin(origin) returns (AnimalListProto) {}
+  rpc findAnimalsByType(type) returns (AnimalListProto) {}
+  rpc findAnimalsByDate(date) returns (AnimalListProto) {}
+}
+
+message AnimalListProto {
+  repeated AnimalProto allAnimals = 1;
+  int64 code = 2;
+}
+
+message id {
+  string  registrationNumber = 1;
+}
+
+message empty {
+
+}
+
+message origin {
+  string origin = 1;
+}
+
+message type {
+  string  type = 1;
+}
+
+message date {
+  string date = 1;
+}
+
+
+message AnimalProto {
+  int64  registrationNumber = 1;
+  int32 weight = 2;
+  string arrivalDate = 3;
+  string origin = 4;
+  string  type = 5;
+}

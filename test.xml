@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_YGHRRKkSEeOoKjcu0dM03g" name="Model">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_cFCKEKkSEeOoKjcu0dM03g" name="IPostDao">
+        <ownedOperation xmi:id="_cFCKEakSEeOoKjcu0dM03g" name="CreateAsync">
+            <ownedParameter xmi:id="_cFCKE6kSEeOoKjcu0dM03g" name="post" direction="in">
+                <type xmi:type="uml:Class" href="_Nzw5AKkSEeOoKjcu0dM03g"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_cFCKFakSEeOoKjcu0dM03g" name="forumId" direction="in">
+                <type xmi:type="uml:PrimitiveType" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/StandardLibrary#//Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_cFCKFKkSEeOoKjcu0dM03g" name="" direction="return">
+                <type xmi:type="uml:Class" href="_Nzw5AKkSEeOoKjcu0dM03g"/>
+            </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_cFCKFakSEeOoKjcu0dM03h" name="GetAllPostsByForumIdAsync">
+            <ownedParameter xmi:id="_cFCKF6kSEeOoKjcu0dM03h" name="id" direction="in">
+                <type xmi:type="uml:PrimitiveType" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/StandardLibrary#//Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_cFCKGakSEeOoKjcu0dM03h" name="" direction="return">
+                <type xmi:type="uml:Class" href="_ZdK5wKkSEeOoKjcu0dM03g"/>
+            </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_cFCKGKkSEeOoKjcu0dM03h" name="GetPostByIdAsync">
+            <ownedParameter xmi:id="_cFCKGakSEeOoKjcu0dM03i" name="forumId" direction="in">
+                <type xmi:type="uml:PrimitiveType" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/StandardLibrary#//Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_cFCKG6kSEeOoKjcu0dM03i" name="postId" direction="in">
+                <type xmi:type="uml:PrimitiveType" href="http://

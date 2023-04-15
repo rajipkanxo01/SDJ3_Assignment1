@@ -1,13 +1,11 @@
-package slaughterHouse.service;
+package slaughterHouse.restAPI.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import slaughterHouse.repository.AnimalRepository;
+import slaughterHouse.restAPI.repository.AnimalRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-public class AnimalServiceTest {
+public class AnimalEntityServiceTest {
     @Autowired
     private AnimalRepository animalRepository;
 

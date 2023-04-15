@@ -1,4 +1,4 @@
-package slaughterHouse.exception;
+package slaughterHouse.restAPI.exception;
 
 public class AnimalNotFoundException extends RuntimeException{
     public AnimalNotFoundException(Long id) {

@@ -1,26 +1,38 @@
-package slaughterHouse.model;
+package slaughterHouse.shared.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import slaughterHouse.grpc.protobuf.AnimalProto;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+
+import slaughterHouse.grpc.protobuf.Animal;
+
 
 @Entity
-public class Animal {
+public class AnimalEntity {
     @Id
+    @Column(name = "registration_number")
     @GeneratedValue
     private Long registrationNumber;
+    @Column(name = "weight")
     private int weight;
+    @Column(name = "arrival_date")
     private LocalDate arrivalDate;
+    @Column(name = "origin")
     private String origin;
+    @Column(name = "type")
     private String type;
 
-    public Animal() {
+    public AnimalEntity() {
     }
 
-    public Animal(int weight, LocalDate arrivalDate, String origin, String type) {
+    public AnimalEntity(int weight, LocalDate arrivalDate, String origin, String type) {
         this.weight = weight;
         this.arrivalDate = arrivalDate;
         this.origin = origin;
@@ -71,8 +83,8 @@ public class Animal {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Animal animal = (Animal) o;
-        return weight == animal.weight && Objects.equals(registrationNumber, animal.registrationNumber) && Objects.equals(arrivalDate, animal.arrivalDate) && Objects.equals(origin, animal.origin) && Objects.equals(type, animal.type);
+        AnimalEntity animalEntity = (AnimalEntity) o;
+        return weight == animalEntity.weight && Objects.equals(registrationNumber, animalEntity.registrationNumber) && Objects.equals(arrivalDate, animalEntity.arrivalDate) && Objects.equals(origin, animalEntity.origin) && Objects.equals(type, animalEntity.type);
     }
 
     @Override
@@ -90,4 +102,6 @@ public class Animal {
                 ", type='" + type + '\'' +
                 '}';
     }
+
+
 }
