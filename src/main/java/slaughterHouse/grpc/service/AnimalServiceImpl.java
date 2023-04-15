@@ -3,12 +3,11 @@ package slaughterHouse.grpc.service;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
-import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import slaughterHouse.grpc.protobuf.*;
+import slaughterHouse.grpc.protobuf.Animal.*;
 import slaughterHouse.shared.model.AnimalEntity;
-import slaughterHouse.restAPI.service.AnimalService;
+import slaughterHouse.shared.service.Animal.AnimalService;
 
 import java.time.LocalDate;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package slaughterHouse.grpc.protobuf;
+package slaughterHouse.grpc.protobuf.Animal;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -14,29 +14,29 @@ public final class AnimalServiceGrpc {
   public static final String SERVICE_NAME = "AnimalService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.id,
-      slaughterHouse.grpc.protobuf.AnimalProto> getFindAnimalByIdMethod;
+  private static volatile io.grpc.MethodDescriptor<id,
+          AnimalProto> getFindAnimalByIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findAnimalById",
-      requestType = slaughterHouse.grpc.protobuf.id.class,
-      responseType = slaughterHouse.grpc.protobuf.AnimalProto.class,
+      requestType = id.class,
+      responseType = AnimalProto.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.id,
-      slaughterHouse.grpc.protobuf.AnimalProto> getFindAnimalByIdMethod() {
-    io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.id, slaughterHouse.grpc.protobuf.AnimalProto> getFindAnimalByIdMethod;
+  public static io.grpc.MethodDescriptor<id,
+          AnimalProto> getFindAnimalByIdMethod() {
+    io.grpc.MethodDescriptor<id, AnimalProto> getFindAnimalByIdMethod;
     if ((getFindAnimalByIdMethod = AnimalServiceGrpc.getFindAnimalByIdMethod) == null) {
       synchronized (AnimalServiceGrpc.class) {
         if ((getFindAnimalByIdMethod = AnimalServiceGrpc.getFindAnimalByIdMethod) == null) {
           AnimalServiceGrpc.getFindAnimalByIdMethod = getFindAnimalByIdMethod =
-              io.grpc.MethodDescriptor.<slaughterHouse.grpc.protobuf.id, slaughterHouse.grpc.protobuf.AnimalProto>newBuilder()
+              io.grpc.MethodDescriptor.<id, AnimalProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAnimalById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.id.getDefaultInstance()))
+                  id.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.AnimalProto.getDefaultInstance()))
+                  AnimalProto.getDefaultInstance()))
               .setSchemaDescriptor(new AnimalServiceMethodDescriptorSupplier("findAnimalById"))
               .build();
         }
@@ -45,29 +45,29 @@ public final class AnimalServiceGrpc {
     return getFindAnimalByIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.empty,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAllAnimalsMethod;
+  private static volatile io.grpc.MethodDescriptor<empty,
+          AnimalListProto> getFindAllAnimalsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findAllAnimals",
-      requestType = slaughterHouse.grpc.protobuf.empty.class,
-      responseType = slaughterHouse.grpc.protobuf.AnimalListProto.class,
+      requestType = empty.class,
+      responseType = AnimalListProto.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.empty,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAllAnimalsMethod() {
-    io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.empty, slaughterHouse.grpc.protobuf.AnimalListProto> getFindAllAnimalsMethod;
+  public static io.grpc.MethodDescriptor<empty,
+          AnimalListProto> getFindAllAnimalsMethod() {
+    io.grpc.MethodDescriptor<empty, AnimalListProto> getFindAllAnimalsMethod;
     if ((getFindAllAnimalsMethod = AnimalServiceGrpc.getFindAllAnimalsMethod) == null) {
       synchronized (AnimalServiceGrpc.class) {
         if ((getFindAllAnimalsMethod = AnimalServiceGrpc.getFindAllAnimalsMethod) == null) {
           AnimalServiceGrpc.getFindAllAnimalsMethod = getFindAllAnimalsMethod =
-              io.grpc.MethodDescriptor.<slaughterHouse.grpc.protobuf.empty, slaughterHouse.grpc.protobuf.AnimalListProto>newBuilder()
+              io.grpc.MethodDescriptor.<empty, AnimalListProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAllAnimals"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.empty.getDefaultInstance()))
+                  empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.AnimalListProto.getDefaultInstance()))
+                  AnimalListProto.getDefaultInstance()))
               .setSchemaDescriptor(new AnimalServiceMethodDescriptorSupplier("findAllAnimals"))
               .build();
         }
@@ -76,29 +76,29 @@ public final class AnimalServiceGrpc {
     return getFindAllAnimalsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.origin,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByOriginMethod;
+  private static volatile io.grpc.MethodDescriptor<origin,
+          AnimalListProto> getFindAnimalsByOriginMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findAnimalsByOrigin",
-      requestType = slaughterHouse.grpc.protobuf.origin.class,
-      responseType = slaughterHouse.grpc.protobuf.AnimalListProto.class,
+      requestType = origin.class,
+      responseType = AnimalListProto.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.origin,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByOriginMethod() {
-    io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.origin, slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByOriginMethod;
+  public static io.grpc.MethodDescriptor<origin,
+          AnimalListProto> getFindAnimalsByOriginMethod() {
+    io.grpc.MethodDescriptor<origin, AnimalListProto> getFindAnimalsByOriginMethod;
     if ((getFindAnimalsByOriginMethod = AnimalServiceGrpc.getFindAnimalsByOriginMethod) == null) {
       synchronized (AnimalServiceGrpc.class) {
         if ((getFindAnimalsByOriginMethod = AnimalServiceGrpc.getFindAnimalsByOriginMethod) == null) {
           AnimalServiceGrpc.getFindAnimalsByOriginMethod = getFindAnimalsByOriginMethod =
-              io.grpc.MethodDescriptor.<slaughterHouse.grpc.protobuf.origin, slaughterHouse.grpc.protobuf.AnimalListProto>newBuilder()
+              io.grpc.MethodDescriptor.<origin, AnimalListProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAnimalsByOrigin"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.origin.getDefaultInstance()))
+                  origin.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.AnimalListProto.getDefaultInstance()))
+                  AnimalListProto.getDefaultInstance()))
               .setSchemaDescriptor(new AnimalServiceMethodDescriptorSupplier("findAnimalsByOrigin"))
               .build();
         }
@@ -107,29 +107,29 @@ public final class AnimalServiceGrpc {
     return getFindAnimalsByOriginMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.type,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByTypeMethod;
+  private static volatile io.grpc.MethodDescriptor<type,
+          AnimalListProto> getFindAnimalsByTypeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findAnimalsByType",
-      requestType = slaughterHouse.grpc.protobuf.type.class,
-      responseType = slaughterHouse.grpc.protobuf.AnimalListProto.class,
+      requestType = type.class,
+      responseType = AnimalListProto.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.type,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByTypeMethod() {
-    io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.type, slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByTypeMethod;
+  public static io.grpc.MethodDescriptor<type,
+          AnimalListProto> getFindAnimalsByTypeMethod() {
+    io.grpc.MethodDescriptor<type, AnimalListProto> getFindAnimalsByTypeMethod;
     if ((getFindAnimalsByTypeMethod = AnimalServiceGrpc.getFindAnimalsByTypeMethod) == null) {
       synchronized (AnimalServiceGrpc.class) {
         if ((getFindAnimalsByTypeMethod = AnimalServiceGrpc.getFindAnimalsByTypeMethod) == null) {
           AnimalServiceGrpc.getFindAnimalsByTypeMethod = getFindAnimalsByTypeMethod =
-              io.grpc.MethodDescriptor.<slaughterHouse.grpc.protobuf.type, slaughterHouse.grpc.protobuf.AnimalListProto>newBuilder()
+              io.grpc.MethodDescriptor.<type, AnimalListProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAnimalsByType"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.type.getDefaultInstance()))
+                  type.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.AnimalListProto.getDefaultInstance()))
+                  AnimalListProto.getDefaultInstance()))
               .setSchemaDescriptor(new AnimalServiceMethodDescriptorSupplier("findAnimalsByType"))
               .build();
         }
@@ -138,29 +138,29 @@ public final class AnimalServiceGrpc {
     return getFindAnimalsByTypeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.date,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByDateMethod;
+  private static volatile io.grpc.MethodDescriptor<date,
+          AnimalListProto> getFindAnimalsByDateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findAnimalsByDate",
-      requestType = slaughterHouse.grpc.protobuf.date.class,
-      responseType = slaughterHouse.grpc.protobuf.AnimalListProto.class,
+      requestType = date.class,
+      responseType = AnimalListProto.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.date,
-      slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByDateMethod() {
-    io.grpc.MethodDescriptor<slaughterHouse.grpc.protobuf.date, slaughterHouse.grpc.protobuf.AnimalListProto> getFindAnimalsByDateMethod;
+  public static io.grpc.MethodDescriptor<date,
+          AnimalListProto> getFindAnimalsByDateMethod() {
+    io.grpc.MethodDescriptor<date, AnimalListProto> getFindAnimalsByDateMethod;
     if ((getFindAnimalsByDateMethod = AnimalServiceGrpc.getFindAnimalsByDateMethod) == null) {
       synchronized (AnimalServiceGrpc.class) {
         if ((getFindAnimalsByDateMethod = AnimalServiceGrpc.getFindAnimalsByDateMethod) == null) {
           AnimalServiceGrpc.getFindAnimalsByDateMethod = getFindAnimalsByDateMethod =
-              io.grpc.MethodDescriptor.<slaughterHouse.grpc.protobuf.date, slaughterHouse.grpc.protobuf.AnimalListProto>newBuilder()
+              io.grpc.MethodDescriptor.<date, AnimalListProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAnimalsByDate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.date.getDefaultInstance()))
+                  date.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  slaughterHouse.grpc.protobuf.AnimalListProto.getDefaultInstance()))
+                  AnimalListProto.getDefaultInstance()))
               .setSchemaDescriptor(new AnimalServiceMethodDescriptorSupplier("findAnimalsByDate"))
               .build();
         }
@@ -219,36 +219,36 @@ public final class AnimalServiceGrpc {
 
     /**
      */
-    public void findAnimalById(slaughterHouse.grpc.protobuf.id request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalProto> responseObserver) {
+    public void findAnimalById(id request,
+                               io.grpc.stub.StreamObserver<AnimalProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAnimalByIdMethod(), responseObserver);
     }
 
     /**
      */
-    public void findAllAnimals(slaughterHouse.grpc.protobuf.empty request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAllAnimals(empty request,
+                               io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAllAnimalsMethod(), responseObserver);
     }
 
     /**
      */
-    public void findAnimalsByOrigin(slaughterHouse.grpc.protobuf.origin request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAnimalsByOrigin(origin request,
+                                    io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAnimalsByOriginMethod(), responseObserver);
     }
 
     /**
      */
-    public void findAnimalsByType(slaughterHouse.grpc.protobuf.type request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAnimalsByType(type request,
+                                  io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAnimalsByTypeMethod(), responseObserver);
     }
 
     /**
      */
-    public void findAnimalsByDate(slaughterHouse.grpc.protobuf.date request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAnimalsByDate(date request,
+                                  io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAnimalsByDateMethod(), responseObserver);
     }
 
@@ -258,36 +258,36 @@ public final class AnimalServiceGrpc {
             getFindAnimalByIdMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                slaughterHouse.grpc.protobuf.id,
-                slaughterHouse.grpc.protobuf.AnimalProto>(
+                      id,
+                      AnimalProto>(
                   this, METHODID_FIND_ANIMAL_BY_ID)))
           .addMethod(
             getFindAllAnimalsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                slaughterHouse.grpc.protobuf.empty,
-                slaughterHouse.grpc.protobuf.AnimalListProto>(
+                      empty,
+                      AnimalListProto>(
                   this, METHODID_FIND_ALL_ANIMALS)))
           .addMethod(
             getFindAnimalsByOriginMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                slaughterHouse.grpc.protobuf.origin,
-                slaughterHouse.grpc.protobuf.AnimalListProto>(
+                      origin,
+                      AnimalListProto>(
                   this, METHODID_FIND_ANIMALS_BY_ORIGIN)))
           .addMethod(
             getFindAnimalsByTypeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                slaughterHouse.grpc.protobuf.type,
-                slaughterHouse.grpc.protobuf.AnimalListProto>(
+                      type,
+                      AnimalListProto>(
                   this, METHODID_FIND_ANIMALS_BY_TYPE)))
           .addMethod(
             getFindAnimalsByDateMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                slaughterHouse.grpc.protobuf.date,
-                slaughterHouse.grpc.protobuf.AnimalListProto>(
+                      date,
+                      AnimalListProto>(
                   this, METHODID_FIND_ANIMALS_BY_DATE)))
           .build();
     }
@@ -309,40 +309,40 @@ public final class AnimalServiceGrpc {
 
     /**
      */
-    public void findAnimalById(slaughterHouse.grpc.protobuf.id request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalProto> responseObserver) {
+    public void findAnimalById(id request,
+                               io.grpc.stub.StreamObserver<AnimalProto> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindAnimalByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void findAllAnimals(slaughterHouse.grpc.protobuf.empty request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAllAnimals(empty request,
+                               io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindAllAnimalsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void findAnimalsByOrigin(slaughterHouse.grpc.protobuf.origin request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAnimalsByOrigin(origin request,
+                                    io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindAnimalsByOriginMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void findAnimalsByType(slaughterHouse.grpc.protobuf.type request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAnimalsByType(type request,
+                                  io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindAnimalsByTypeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void findAnimalsByDate(slaughterHouse.grpc.protobuf.date request,
-        io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto> responseObserver) {
+    public void findAnimalsByDate(date request,
+                                  io.grpc.stub.StreamObserver<AnimalListProto> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindAnimalsByDateMethod(), getCallOptions()), request, responseObserver);
     }
@@ -364,35 +364,35 @@ public final class AnimalServiceGrpc {
 
     /**
      */
-    public slaughterHouse.grpc.protobuf.AnimalProto findAnimalById(slaughterHouse.grpc.protobuf.id request) {
+    public AnimalProto findAnimalById(id request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindAnimalByIdMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public slaughterHouse.grpc.protobuf.AnimalListProto findAllAnimals(slaughterHouse.grpc.protobuf.empty request) {
+    public AnimalListProto findAllAnimals(empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindAllAnimalsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public slaughterHouse.grpc.protobuf.AnimalListProto findAnimalsByOrigin(slaughterHouse.grpc.protobuf.origin request) {
+    public AnimalListProto findAnimalsByOrigin(origin request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindAnimalsByOriginMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public slaughterHouse.grpc.protobuf.AnimalListProto findAnimalsByType(slaughterHouse.grpc.protobuf.type request) {
+    public AnimalListProto findAnimalsByType(type request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindAnimalsByTypeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public slaughterHouse.grpc.protobuf.AnimalListProto findAnimalsByDate(slaughterHouse.grpc.protobuf.date request) {
+    public AnimalListProto findAnimalsByDate(date request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindAnimalsByDateMethod(), getCallOptions(), request);
     }
@@ -414,40 +414,40 @@ public final class AnimalServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<slaughterHouse.grpc.protobuf.AnimalProto> findAnimalById(
-        slaughterHouse.grpc.protobuf.id request) {
+    public com.google.common.util.concurrent.ListenableFuture<AnimalProto> findAnimalById(
+        id request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindAnimalByIdMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<slaughterHouse.grpc.protobuf.AnimalListProto> findAllAnimals(
-        slaughterHouse.grpc.protobuf.empty request) {
+    public com.google.common.util.concurrent.ListenableFuture<AnimalListProto> findAllAnimals(
+        empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindAllAnimalsMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<slaughterHouse.grpc.protobuf.AnimalListProto> findAnimalsByOrigin(
-        slaughterHouse.grpc.protobuf.origin request) {
+    public com.google.common.util.concurrent.ListenableFuture<AnimalListProto> findAnimalsByOrigin(
+        origin request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindAnimalsByOriginMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<slaughterHouse.grpc.protobuf.AnimalListProto> findAnimalsByType(
-        slaughterHouse.grpc.protobuf.type request) {
+    public com.google.common.util.concurrent.ListenableFuture<AnimalListProto> findAnimalsByType(
+        type request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindAnimalsByTypeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<slaughterHouse.grpc.protobuf.AnimalListProto> findAnimalsByDate(
-        slaughterHouse.grpc.protobuf.date request) {
+    public com.google.common.util.concurrent.ListenableFuture<AnimalListProto> findAnimalsByDate(
+        date request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindAnimalsByDateMethod(), getCallOptions()), request);
     }
@@ -477,24 +477,24 @@ public final class AnimalServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_FIND_ANIMAL_BY_ID:
-          serviceImpl.findAnimalById((slaughterHouse.grpc.protobuf.id) request,
-              (io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalProto>) responseObserver);
+          serviceImpl.findAnimalById((id) request,
+              (io.grpc.stub.StreamObserver<AnimalProto>) responseObserver);
           break;
         case METHODID_FIND_ALL_ANIMALS:
-          serviceImpl.findAllAnimals((slaughterHouse.grpc.protobuf.empty) request,
-              (io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto>) responseObserver);
+          serviceImpl.findAllAnimals((empty) request,
+              (io.grpc.stub.StreamObserver<AnimalListProto>) responseObserver);
           break;
         case METHODID_FIND_ANIMALS_BY_ORIGIN:
-          serviceImpl.findAnimalsByOrigin((slaughterHouse.grpc.protobuf.origin) request,
-              (io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto>) responseObserver);
+          serviceImpl.findAnimalsByOrigin((origin) request,
+              (io.grpc.stub.StreamObserver<AnimalListProto>) responseObserver);
           break;
         case METHODID_FIND_ANIMALS_BY_TYPE:
-          serviceImpl.findAnimalsByType((slaughterHouse.grpc.protobuf.type) request,
-              (io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto>) responseObserver);
+          serviceImpl.findAnimalsByType((type) request,
+              (io.grpc.stub.StreamObserver<AnimalListProto>) responseObserver);
           break;
         case METHODID_FIND_ANIMALS_BY_DATE:
-          serviceImpl.findAnimalsByDate((slaughterHouse.grpc.protobuf.date) request,
-              (io.grpc.stub.StreamObserver<slaughterHouse.grpc.protobuf.AnimalListProto>) responseObserver);
+          serviceImpl.findAnimalsByDate((date) request,
+              (io.grpc.stub.StreamObserver<AnimalListProto>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -518,7 +518,7 @@ public final class AnimalServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return slaughterHouse.grpc.protobuf.Animal.getDescriptor();
+      return Animal.getDescriptor();
     }
 
     @java.lang.Override

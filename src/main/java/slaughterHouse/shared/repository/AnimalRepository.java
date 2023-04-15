@@ -1,4 +1,4 @@
-package slaughterHouse.restAPI.repository;
+package slaughterHouse.shared.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

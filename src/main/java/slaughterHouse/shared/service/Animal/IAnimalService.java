@@ -1,4 +1,4 @@
-package slaughterHouse.restAPI.service;
+package slaughterHouse.shared.service.Animal;
 
 import org.springframework.stereotype.Service;
 import slaughterHouse.shared.model.AnimalEntity;

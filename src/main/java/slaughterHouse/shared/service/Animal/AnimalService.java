@@ -1,10 +1,10 @@
-package slaughterHouse.restAPI.service;
+package slaughterHouse.shared.service.Animal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import slaughterHouse.restAPI.exception.AnimalNotFoundException;
 import slaughterHouse.shared.model.AnimalEntity;
-import slaughterHouse.restAPI.repository.AnimalRepository;
+import slaughterHouse.shared.repository.AnimalRepository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class AnimalService implements IAnimalService {
     private AnimalRepository animalRepository;
 
-        @Autowired
+    @Autowired
     public AnimalService(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
 

@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import slaughterHouse.shared.model.AnimalEntity;
-import slaughterHouse.restAPI.service.IAnimalService;
+import slaughterHouse.shared.service.Animal.IAnimalService;
 
 import java.time.LocalDate;
 import java.util.List;

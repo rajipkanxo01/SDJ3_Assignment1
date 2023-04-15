@@ -1,6 +1,6 @@
 package slaughterHouse.grpc.service;
 
-import slaughterHouse.grpc.protobuf.AnimalProto;
+import slaughterHouse.grpc.protobuf.Animal.AnimalProto;
 import slaughterHouse.shared.model.AnimalEntity;
 
 import java.time.LocalDate;
