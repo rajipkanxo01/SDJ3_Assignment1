@@ -1,28 +1,27 @@
 package slaughterHouse.shared.model;
 
-import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
 @Entity
 public class AnimalEntity {
     @Id
-    @Column(name = "registration_number")
     @GeneratedValue
     private Long registrationNumber;
-    @Column(name = "weight")
     private int weight;
-    @Column(name = "arrival_date")
     private LocalDate arrivalDate;
-    @Column(name = "origin")
     private String origin;
-    @Column(name = "type")
     private String type;
+    private List<ProductEntity> involvedInProducts;
+
 
     public AnimalEntity() {
     }
@@ -32,6 +31,7 @@ public class AnimalEntity {
         this.arrivalDate = arrivalDate;
         this.origin = origin;
         this.type = type;
+        involvedInProducts = new ArrayList<>();
     }
 
     public void setRegistrationNumber(Long registrationNumber) {
@@ -74,29 +74,36 @@ public class AnimalEntity {
         this.type = type;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AnimalEntity animalEntity = (AnimalEntity) o;
-        return weight == animalEntity.weight && Objects.equals(registrationNumber, animalEntity.registrationNumber) && Objects.equals(arrivalDate, animalEntity.arrivalDate) && Objects.equals(origin, animalEntity.origin) && Objects.equals(type, animalEntity.type);
+    public List<ProductEntity> getInvolvedInProducts() {
+        return involvedInProducts;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(registrationNumber, weight, arrivalDate, origin, type);
+    public void setInvolvedInProducts(List<ProductEntity> involvedInProducts) {
+        this.involvedInProducts = involvedInProducts;
     }
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return "AnimalEntity{" +
                 "registrationNumber=" + registrationNumber +
                 ", weight=" + weight +
                 ", arrivalDate=" + arrivalDate +
                 ", origin='" + origin + '\'' +
                 ", type='" + type + '\'' +
+                ", involvedInProducts=" + involvedInProducts +
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AnimalEntity animal = (AnimalEntity) o;
+        return weight == animal.weight && Objects.equals(registrationNumber, animal.registrationNumber) && Objects.equals(arrivalDate, animal.arrivalDate) && Objects.equals(origin, animal.origin) && Objects.equals(type, animal.type) && Objects.equals(involvedInProducts, animal.involvedInProducts);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(registrationNumber, weight, arrivalDate, origin, type, involvedInProducts);
+    }
 }

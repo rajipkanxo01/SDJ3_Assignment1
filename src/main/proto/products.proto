@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "slaughterHouse.grpc.protobuf.product";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "animal.proto";
+
+service ProductsService {
+  rpc createProduct(ProductProto) returns (ProductProto);
+  rpc findProductById(google.protobuf.Int64Value) returns (ProductProto);
+  rpc findAllProducts(google.protobuf.Empty) returns (ProductListProto);
+  rpc findProductsByType(google.protobuf.StringValue) returns (ProductListProto);
+  rpc findAnimalsInvolvedInProduct(google.protobuf.Int64Value) returns (AnimalListProto);
+  rpc deleteProduct(google.protobuf.Int64Value) returns (google.protobuf.BoolValue);
+  rpc updateProduct(google.protobuf.Int64Value) returns (ProductProto);
+}
+
+
+message ProductProto {
+  int64 productId = 1;
+  google.protobuf.StringValue productType = 2;
+  int32  productWeight = 3;
+  repeated  AnimalListProto involvedAnimals = 4;
+}
+
+message ProductListProto {
+  repeated ProductProto allProducts = 1;
+}

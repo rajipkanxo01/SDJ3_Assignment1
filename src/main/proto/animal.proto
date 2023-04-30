@@ -1,41 +1,25 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "slaughterHouse.grpc.protobuf";
+option java_package = "slaughterHouse.grpc.protobuf.animals";
 
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "products.proto";
 
 
 service AnimalService {
-  rpc findAnimalById(id) returns (AnimalProto) {}
-  rpc findAllAnimals(empty) returns (AnimalListProto) {}
-  rpc findAnimalsByOrigin(origin) returns (AnimalListProto) {}
-  rpc findAnimalsByType(type) returns (AnimalListProto) {}
-  rpc findAnimalsByDate(date) returns (AnimalListProto) {}
+  rpc findAnimalById(google.protobuf.Int64Value) returns (AnimalProto) {}
+  rpc findAllAnimals(google.protobuf.Empty) returns (AnimalListProto) {}
+  rpc findAnimalsByOrigin(google.protobuf.StringValue) returns (AnimalListProto) {}
+  rpc findAnimalsByType(google.protobuf.StringValue) returns (AnimalListProto) {}
+  rpc findAnimalsByDate(google.protobuf.StringValue) returns (AnimalListProto) {}
+  rpc findProductsInvolved(google.protobuf.Int64Value) returns (ProductListProto);
 }
 
 message AnimalListProto {
   repeated AnimalProto allAnimals = 1;
   int64 code = 2;
-}
-
-message id {
-  string  registrationNumber = 1;
-}
-
-message empty {
-
-}
-
-message origin {
-  string origin = 1;
-}
-
-message type {
-  string  type = 1;
-}
-
-message date {
-  string date = 1;
 }
 
 
