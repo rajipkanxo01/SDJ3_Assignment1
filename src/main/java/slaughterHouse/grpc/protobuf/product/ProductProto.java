@@ -17,7 +17,6 @@ public  final class ProductProto extends
   private ProductProto() {
     productId_ = 0L;
     productWeight_ = 0;
-    involvedAnimals_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -69,12 +68,16 @@ public  final class ProductProto extends
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              involvedAnimals_ = new java.util.ArrayList<slaughterHouse.grpc.protobuf.animals.AnimalListProto>();
-              mutable_bitField0_ |= 0x00000008;
+            slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder subBuilder = null;
+            if (involvedAnimals_ != null) {
+              subBuilder = involvedAnimals_.toBuilder();
             }
-            involvedAnimals_.add(
-                input.readMessage(slaughterHouse.grpc.protobuf.animals.AnimalListProto.parser(), extensionRegistry));
+            involvedAnimals_ = input.readMessage(slaughterHouse.grpc.protobuf.animals.AnimalListProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(involvedAnimals_);
+              involvedAnimals_ = subBuilder.buildPartial();
+            }
+
             break;
           }
         }
@@ -85,9 +88,6 @@ public  final class ProductProto extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-        involvedAnimals_ = java.util.Collections.unmodifiableList(involvedAnimals_);
-      }
       makeExtensionsImmutable();
     }
   }
@@ -103,7 +103,6 @@ public  final class ProductProto extends
             slaughterHouse.grpc.protobuf.product.ProductProto.class, slaughterHouse.grpc.protobuf.product.ProductProto.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PRODUCTID_FIELD_NUMBER = 1;
   private long productId_;
   /**
@@ -144,38 +143,24 @@ public  final class ProductProto extends
   }
 
   public static final int INVOLVEDANIMALS_FIELD_NUMBER = 4;
-  private java.util.List<slaughterHouse.grpc.protobuf.animals.AnimalListProto> involvedAnimals_;
+  private slaughterHouse.grpc.protobuf.animals.AnimalListProto involvedAnimals_;
   /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+   * <code>optional .AnimalListProto involvedAnimals = 4;</code>
    */
-  public java.util.List<slaughterHouse.grpc.protobuf.animals.AnimalListProto> getInvolvedAnimalsList() {
-    return involvedAnimals_;
+  public boolean hasInvolvedAnimals() {
+    return involvedAnimals_ != null;
   }
   /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+   * <code>optional .AnimalListProto involvedAnimals = 4;</code>
    */
-  public java.util.List<? extends slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder> 
-      getInvolvedAnimalsOrBuilderList() {
-    return involvedAnimals_;
+  public slaughterHouse.grpc.protobuf.animals.AnimalListProto getInvolvedAnimals() {
+    return involvedAnimals_ == null ? slaughterHouse.grpc.protobuf.animals.AnimalListProto.getDefaultInstance() : involvedAnimals_;
   }
   /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+   * <code>optional .AnimalListProto involvedAnimals = 4;</code>
    */
-  public int getInvolvedAnimalsCount() {
-    return involvedAnimals_.size();
-  }
-  /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-   */
-  public slaughterHouse.grpc.protobuf.animals.AnimalListProto getInvolvedAnimals(int index) {
-    return involvedAnimals_.get(index);
-  }
-  /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-   */
-  public slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder getInvolvedAnimalsOrBuilder(
-      int index) {
-    return involvedAnimals_.get(index);
+  public slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder getInvolvedAnimalsOrBuilder() {
+    return getInvolvedAnimals();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -199,8 +184,8 @@ public  final class ProductProto extends
     if (productWeight_ != 0) {
       output.writeInt32(3, productWeight_);
     }
-    for (int i = 0; i < involvedAnimals_.size(); i++) {
-      output.writeMessage(4, involvedAnimals_.get(i));
+    if (involvedAnimals_ != null) {
+      output.writeMessage(4, getInvolvedAnimals());
     }
   }
 
@@ -221,9 +206,9 @@ public  final class ProductProto extends
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, productWeight_);
     }
-    for (int i = 0; i < involvedAnimals_.size(); i++) {
+    if (involvedAnimals_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, involvedAnimals_.get(i));
+        .computeMessageSize(4, getInvolvedAnimals());
     }
     memoizedSize = size;
     return size;
@@ -250,8 +235,11 @@ public  final class ProductProto extends
     }
     result = result && (getProductWeight()
         == other.getProductWeight());
-    result = result && getInvolvedAnimalsList()
-        .equals(other.getInvolvedAnimalsList());
+    result = result && (hasInvolvedAnimals() == other.hasInvolvedAnimals());
+    if (hasInvolvedAnimals()) {
+      result = result && getInvolvedAnimals()
+          .equals(other.getInvolvedAnimals());
+    }
     return result;
   }
 
@@ -271,9 +259,9 @@ public  final class ProductProto extends
     }
     hash = (37 * hash) + PRODUCTWEIGHT_FIELD_NUMBER;
     hash = (53 * hash) + getProductWeight();
-    if (getInvolvedAnimalsCount() > 0) {
+    if (hasInvolvedAnimals()) {
       hash = (37 * hash) + INVOLVEDANIMALS_FIELD_NUMBER;
-      hash = (53 * hash) + getInvolvedAnimalsList().hashCode();
+      hash = (53 * hash) + getInvolvedAnimals().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -389,7 +377,6 @@ public  final class ProductProto extends
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getInvolvedAnimalsFieldBuilder();
       }
     }
     public Builder clear() {
@@ -405,10 +392,10 @@ public  final class ProductProto extends
       productWeight_ = 0;
 
       if (involvedAnimalsBuilder_ == null) {
-        involvedAnimals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        involvedAnimals_ = null;
       } else {
-        involvedAnimalsBuilder_.clear();
+        involvedAnimals_ = null;
+        involvedAnimalsBuilder_ = null;
       }
       return this;
     }
@@ -432,8 +419,6 @@ public  final class ProductProto extends
 
     public slaughterHouse.grpc.protobuf.product.ProductProto buildPartial() {
       slaughterHouse.grpc.protobuf.product.ProductProto result = new slaughterHouse.grpc.protobuf.product.ProductProto(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.productId_ = productId_;
       if (productTypeBuilder_ == null) {
         result.productType_ = productType_;
@@ -442,15 +427,10 @@ public  final class ProductProto extends
       }
       result.productWeight_ = productWeight_;
       if (involvedAnimalsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          involvedAnimals_ = java.util.Collections.unmodifiableList(involvedAnimals_);
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
         result.involvedAnimals_ = involvedAnimals_;
       } else {
         result.involvedAnimals_ = involvedAnimalsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -501,31 +481,8 @@ public  final class ProductProto extends
       if (other.getProductWeight() != 0) {
         setProductWeight(other.getProductWeight());
       }
-      if (involvedAnimalsBuilder_ == null) {
-        if (!other.involvedAnimals_.isEmpty()) {
-          if (involvedAnimals_.isEmpty()) {
-            involvedAnimals_ = other.involvedAnimals_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureInvolvedAnimalsIsMutable();
-            involvedAnimals_.addAll(other.involvedAnimals_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.involvedAnimals_.isEmpty()) {
-          if (involvedAnimalsBuilder_.isEmpty()) {
-            involvedAnimalsBuilder_.dispose();
-            involvedAnimalsBuilder_ = null;
-            involvedAnimals_ = other.involvedAnimals_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-            involvedAnimalsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getInvolvedAnimalsFieldBuilder() : null;
-          } else {
-            involvedAnimalsBuilder_.addAllMessages(other.involvedAnimals_);
-          }
-        }
+      if (other.hasInvolvedAnimals()) {
+        mergeInvolvedAnimals(other.getInvolvedAnimals());
       }
       onChanged();
       return this;
@@ -552,7 +509,6 @@ public  final class ProductProto extends
       }
       return this;
     }
-    private int bitField0_;
 
     private long productId_ ;
     /**
@@ -723,239 +679,116 @@ public  final class ProductProto extends
       return this;
     }
 
-    private java.util.List<slaughterHouse.grpc.protobuf.animals.AnimalListProto> involvedAnimals_ =
-      java.util.Collections.emptyList();
-    private void ensureInvolvedAnimalsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        involvedAnimals_ = new java.util.ArrayList<slaughterHouse.grpc.protobuf.animals.AnimalListProto>(involvedAnimals_);
-        bitField0_ |= 0x00000008;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private slaughterHouse.grpc.protobuf.animals.AnimalListProto involvedAnimals_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
         slaughterHouse.grpc.protobuf.animals.AnimalListProto, slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder, slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder> involvedAnimalsBuilder_;
+    /**
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
+     */
+    public boolean hasInvolvedAnimals() {
+      return involvedAnimalsBuilder_ != null || involvedAnimals_ != null;
+    }
+    /**
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
+     */
+    public slaughterHouse.grpc.protobuf.animals.AnimalListProto getInvolvedAnimals() {
+      if (involvedAnimalsBuilder_ == null) {
+        return involvedAnimals_ == null ? slaughterHouse.grpc.protobuf.animals.AnimalListProto.getDefaultInstance() : involvedAnimals_;
+      } else {
+        return involvedAnimalsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
+     */
+    public Builder setInvolvedAnimals(slaughterHouse.grpc.protobuf.animals.AnimalListProto value) {
+      if (involvedAnimalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        involvedAnimals_ = value;
+        onChanged();
+      } else {
+        involvedAnimalsBuilder_.setMessage(value);
+      }
 
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public java.util.List<slaughterHouse.grpc.protobuf.animals.AnimalListProto> getInvolvedAnimalsList() {
-      if (involvedAnimalsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(involvedAnimals_);
-      } else {
-        return involvedAnimalsBuilder_.getMessageList();
-      }
+      return this;
     }
     /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public int getInvolvedAnimalsCount() {
-      if (involvedAnimalsBuilder_ == null) {
-        return involvedAnimals_.size();
-      } else {
-        return involvedAnimalsBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public slaughterHouse.grpc.protobuf.animals.AnimalListProto getInvolvedAnimals(int index) {
-      if (involvedAnimalsBuilder_ == null) {
-        return involvedAnimals_.get(index);
-      } else {
-        return involvedAnimalsBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
      */
     public Builder setInvolvedAnimals(
-        int index, slaughterHouse.grpc.protobuf.animals.AnimalListProto value) {
-      if (involvedAnimalsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureInvolvedAnimalsIsMutable();
-        involvedAnimals_.set(index, value);
-        onChanged();
-      } else {
-        involvedAnimalsBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public Builder setInvolvedAnimals(
-        int index, slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder builderForValue) {
-      if (involvedAnimalsBuilder_ == null) {
-        ensureInvolvedAnimalsIsMutable();
-        involvedAnimals_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        involvedAnimalsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public Builder addInvolvedAnimals(slaughterHouse.grpc.protobuf.animals.AnimalListProto value) {
-      if (involvedAnimalsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureInvolvedAnimalsIsMutable();
-        involvedAnimals_.add(value);
-        onChanged();
-      } else {
-        involvedAnimalsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public Builder addInvolvedAnimals(
-        int index, slaughterHouse.grpc.protobuf.animals.AnimalListProto value) {
-      if (involvedAnimalsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureInvolvedAnimalsIsMutable();
-        involvedAnimals_.add(index, value);
-        onChanged();
-      } else {
-        involvedAnimalsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public Builder addInvolvedAnimals(
         slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder builderForValue) {
       if (involvedAnimalsBuilder_ == null) {
-        ensureInvolvedAnimalsIsMutable();
-        involvedAnimals_.add(builderForValue.build());
+        involvedAnimals_ = builderForValue.build();
         onChanged();
       } else {
-        involvedAnimalsBuilder_.addMessage(builderForValue.build());
+        involvedAnimalsBuilder_.setMessage(builderForValue.build());
       }
+
       return this;
     }
     /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
      */
-    public Builder addInvolvedAnimals(
-        int index, slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder builderForValue) {
+    public Builder mergeInvolvedAnimals(slaughterHouse.grpc.protobuf.animals.AnimalListProto value) {
       if (involvedAnimalsBuilder_ == null) {
-        ensureInvolvedAnimalsIsMutable();
-        involvedAnimals_.add(index, builderForValue.build());
+        if (involvedAnimals_ != null) {
+          involvedAnimals_ =
+            slaughterHouse.grpc.protobuf.animals.AnimalListProto.newBuilder(involvedAnimals_).mergeFrom(value).buildPartial();
+        } else {
+          involvedAnimals_ = value;
+        }
         onChanged();
       } else {
-        involvedAnimalsBuilder_.addMessage(index, builderForValue.build());
+        involvedAnimalsBuilder_.mergeFrom(value);
       }
+
       return this;
     }
     /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public Builder addAllInvolvedAnimals(
-        java.lang.Iterable<? extends slaughterHouse.grpc.protobuf.animals.AnimalListProto> values) {
-      if (involvedAnimalsBuilder_ == null) {
-        ensureInvolvedAnimalsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, involvedAnimals_);
-        onChanged();
-      } else {
-        involvedAnimalsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
      */
     public Builder clearInvolvedAnimals() {
       if (involvedAnimalsBuilder_ == null) {
-        involvedAnimals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        involvedAnimals_ = null;
         onChanged();
       } else {
-        involvedAnimalsBuilder_.clear();
+        involvedAnimals_ = null;
+        involvedAnimalsBuilder_ = null;
       }
+
       return this;
     }
     /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
      */
-    public Builder removeInvolvedAnimals(int index) {
-      if (involvedAnimalsBuilder_ == null) {
-        ensureInvolvedAnimalsIsMutable();
-        involvedAnimals_.remove(index);
-        onChanged();
-      } else {
-        involvedAnimalsBuilder_.remove(index);
-      }
-      return this;
+    public slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder getInvolvedAnimalsBuilder() {
+      
+      onChanged();
+      return getInvolvedAnimalsFieldBuilder().getBuilder();
     }
     /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
      */
-    public slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder getInvolvedAnimalsBuilder(
-        int index) {
-      return getInvolvedAnimalsFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder getInvolvedAnimalsOrBuilder(
-        int index) {
-      if (involvedAnimalsBuilder_ == null) {
-        return involvedAnimals_.get(index);  } else {
-        return involvedAnimalsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public java.util.List<? extends slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder> 
-         getInvolvedAnimalsOrBuilderList() {
+    public slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder getInvolvedAnimalsOrBuilder() {
       if (involvedAnimalsBuilder_ != null) {
-        return involvedAnimalsBuilder_.getMessageOrBuilderList();
+        return involvedAnimalsBuilder_.getMessageOrBuilder();
       } else {
-        return java.util.Collections.unmodifiableList(involvedAnimals_);
+        return involvedAnimals_ == null ?
+            slaughterHouse.grpc.protobuf.animals.AnimalListProto.getDefaultInstance() : involvedAnimals_;
       }
     }
     /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+     * <code>optional .AnimalListProto involvedAnimals = 4;</code>
      */
-    public slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder addInvolvedAnimalsBuilder() {
-      return getInvolvedAnimalsFieldBuilder().addBuilder(
-          slaughterHouse.grpc.protobuf.animals.AnimalListProto.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder addInvolvedAnimalsBuilder(
-        int index) {
-      return getInvolvedAnimalsFieldBuilder().addBuilder(
-          index, slaughterHouse.grpc.protobuf.animals.AnimalListProto.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-     */
-    public java.util.List<slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder> 
-         getInvolvedAnimalsBuilderList() {
-      return getInvolvedAnimalsFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilderV3<
         slaughterHouse.grpc.protobuf.animals.AnimalListProto, slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder, slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder> 
         getInvolvedAnimalsFieldBuilder() {
       if (involvedAnimalsBuilder_ == null) {
-        involvedAnimalsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        involvedAnimalsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             slaughterHouse.grpc.protobuf.animals.AnimalListProto, slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder, slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder>(
-                involvedAnimals_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                getInvolvedAnimals(),
                 getParentForChildren(),
                 isClean());
         involvedAnimals_ = null;

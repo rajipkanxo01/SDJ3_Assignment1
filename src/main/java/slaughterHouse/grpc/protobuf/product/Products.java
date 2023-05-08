@@ -38,7 +38,7 @@ public final class Products {
       "nimal.proto\"\226\001\n\014ProductProto\022\021\n\tproductI" +
       "d\030\001 \001(\003\0221\n\013productType\030\002 \001(\0132\034.google.pr" +
       "otobuf.StringValue\022\025\n\rproductWeight\030\003 \001(" +
-      "\005\022)\n\017involvedAnimals\030\004 \003(\0132\020.AnimalListP" +
+      "\005\022)\n\017involvedAnimals\030\004 \001(\0132\020.AnimalListP" +
       "roto\"6\n\020ProductListProto\022\"\n\013allProducts\030" +
       "\001 \003(\0132\r.ProductProto2\332\003\n\017ProductsService" +
       "\022-\n\rcreateProduct\022\r.ProductProto\032\r.Produ" +

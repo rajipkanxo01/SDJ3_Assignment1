@@ -63,7 +63,7 @@ public class AnimalServiceImpl extends AnimalServiceGrpc.AnimalServiceImplBase {
         addAnimalsToBuilder(responseObserver, animalByDate);
     }
 
-    private static void addAnimalsToBuilder(StreamObserver<AnimalListProto> responseObserver, List<AnimalEntity> animalEntities) {
+    public static void addAnimalsToBuilder(StreamObserver<AnimalListProto> responseObserver, List<AnimalEntity> animalEntities) {
         AnimalListProto.Builder animalListBuilder = AnimalListProto.newBuilder();
 
         for (AnimalEntity animal : animalEntities) {

@@ -22,7 +22,7 @@ message ProductProto {
   int64 productId = 1;
   google.protobuf.StringValue productType = 2;
   int32  productWeight = 3;
-  repeated  AnimalListProto involvedAnimals = 4;
+  AnimalListProto involvedAnimals = 4;
 }
 
 message ProductListProto {

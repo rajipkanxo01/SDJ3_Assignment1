@@ -34,22 +34,22 @@ public final class Animal {
   static {
     java.lang.String[] descriptorData = {
       "\n\014animal.proto\032\033google/protobuf/empty.pr" +
-      "oto\032\036google/protobuf/wrappers.proto\"A\n\017A" +
+      "oto\032\036google/protobuf/wrappers.proto\"3\n\017A" +
       "nimalListProto\022 \n\nallAnimals\030\001 \003(\0132\014.Ani" +
-      "malProto\022\014\n\004code\030\002 \001(\003\"l\n\013AnimalProto\022\032\n" +
-      "\022registrationNumber\030\001 \001(\003\022\016\n\006weight\030\002 \001(" +
-      "\005\022\023\n\013arrivalDate\030\003 \001(\t\022\016\n\006origin\030\004 \001(\t\022\014" +
-      "\n\004type\030\005 \001(\t2\343\002\n\rAnimalService\022=\n\016findAn" +
-      "imalById\022\033.google.protobuf.Int64Value\032\014." +
-      "AnimalProto\"\000\022<\n\016findAllAnimals\022\026.google" +
-      ".protobuf.Empty\032\020.AnimalListProto\"\000\022G\n\023f",
-      "indAnimalsByOrigin\022\034.google.protobuf.Str" +
-      "ingValue\032\020.AnimalListProto\"\000\022E\n\021findAnim" +
-      "alsByType\022\034.google.protobuf.StringValue\032" +
-      "\020.AnimalListProto\"\000\022E\n\021findAnimalsByDate" +
-      "\022\034.google.protobuf.StringValue\032\020.AnimalL" +
-      "istProto\"\000B(\n$slaughterHouse.grpc.protob" +
-      "uf.animalsP\001b\006proto3"
+      "malProto\"l\n\013AnimalProto\022\032\n\022registrationN" +
+      "umber\030\001 \001(\003\022\016\n\006weight\030\002 \001(\005\022\023\n\013arrivalDa" +
+      "te\030\003 \001(\t\022\016\n\006origin\030\004 \001(\t\022\014\n\004type\030\005 \001(\t2\343" +
+      "\002\n\rAnimalService\022=\n\016findAnimalById\022\033.goo" +
+      "gle.protobuf.Int64Value\032\014.AnimalProto\"\000\022" +
+      "<\n\016findAllAnimals\022\026.google.protobuf.Empt" +
+      "y\032\020.AnimalListProto\"\000\022G\n\023findAnimalsByOr",
+      "igin\022\034.google.protobuf.StringValue\032\020.Ani" +
+      "malListProto\"\000\022E\n\021findAnimalsByType\022\034.go" +
+      "ogle.protobuf.StringValue\032\020.AnimalListPr" +
+      "oto\"\000\022E\n\021findAnimalsByDate\022\034.google.prot" +
+      "obuf.StringValue\032\020.AnimalListProto\"\000B(\n$" +
+      "slaughterHouse.grpc.protobuf.animalsP\001b\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -70,7 +70,7 @@ public final class Animal {
     internal_static_AnimalListProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AnimalListProto_descriptor,
-        new java.lang.String[] { "AllAnimals", "Code", });
+        new java.lang.String[] { "AllAnimals", });
     internal_static_AnimalProto_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_AnimalProto_fieldAccessorTable = new

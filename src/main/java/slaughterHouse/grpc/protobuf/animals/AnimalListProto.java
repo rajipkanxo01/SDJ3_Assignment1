@@ -16,7 +16,6 @@ public  final class AnimalListProto extends
   }
   private AnimalListProto() {
     allAnimals_ = java.util.Collections.emptyList();
-    code_ = 0L;
   }
 
   @java.lang.Override
@@ -53,11 +52,6 @@ public  final class AnimalListProto extends
                 input.readMessage(slaughterHouse.grpc.protobuf.animals.AnimalProto.parser(), extensionRegistry));
             break;
           }
-          case 16: {
-
-            code_ = input.readInt64();
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -84,7 +78,6 @@ public  final class AnimalListProto extends
             slaughterHouse.grpc.protobuf.animals.AnimalListProto.class, slaughterHouse.grpc.protobuf.animals.AnimalListProto.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ALLANIMALS_FIELD_NUMBER = 1;
   private java.util.List<slaughterHouse.grpc.protobuf.animals.AnimalProto> allAnimals_;
   /**
@@ -120,15 +113,6 @@ public  final class AnimalListProto extends
     return allAnimals_.get(index);
   }
 
-  public static final int CODE_FIELD_NUMBER = 2;
-  private long code_;
-  /**
-   * <code>optional int64 code = 2;</code>
-   */
-  public long getCode() {
-    return code_;
-  }
-
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -144,9 +128,6 @@ public  final class AnimalListProto extends
     for (int i = 0; i < allAnimals_.size(); i++) {
       output.writeMessage(1, allAnimals_.get(i));
     }
-    if (code_ != 0L) {
-      output.writeInt64(2, code_);
-    }
   }
 
   public int getSerializedSize() {
@@ -157,10 +138,6 @@ public  final class AnimalListProto extends
     for (int i = 0; i < allAnimals_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, allAnimals_.get(i));
-    }
-    if (code_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, code_);
     }
     memoizedSize = size;
     return size;
@@ -180,8 +157,6 @@ public  final class AnimalListProto extends
     boolean result = true;
     result = result && getAllAnimalsList()
         .equals(other.getAllAnimalsList());
-    result = result && (getCode()
-        == other.getCode());
     return result;
   }
 
@@ -196,9 +171,6 @@ public  final class AnimalListProto extends
       hash = (37 * hash) + ALLANIMALS_FIELD_NUMBER;
       hash = (53 * hash) + getAllAnimalsList().hashCode();
     }
-    hash = (37 * hash) + CODE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCode());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,8 +296,6 @@ public  final class AnimalListProto extends
       } else {
         allAnimalsBuilder_.clear();
       }
-      code_ = 0L;
-
       return this;
     }
 
@@ -349,7 +319,6 @@ public  final class AnimalListProto extends
     public slaughterHouse.grpc.protobuf.animals.AnimalListProto buildPartial() {
       slaughterHouse.grpc.protobuf.animals.AnimalListProto result = new slaughterHouse.grpc.protobuf.animals.AnimalListProto(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (allAnimalsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           allAnimals_ = java.util.Collections.unmodifiableList(allAnimals_);
@@ -359,8 +328,6 @@ public  final class AnimalListProto extends
       } else {
         result.allAnimals_ = allAnimalsBuilder_.build();
       }
-      result.code_ = code_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -427,9 +394,6 @@ public  final class AnimalListProto extends
             allAnimalsBuilder_.addAllMessages(other.allAnimals_);
           }
         }
-      }
-      if (other.getCode() != 0L) {
-        setCode(other.getCode());
       }
       onChanged();
       return this;
@@ -696,32 +660,6 @@ public  final class AnimalListProto extends
         allAnimals_ = null;
       }
       return allAnimalsBuilder_;
-    }
-
-    private long code_ ;
-    /**
-     * <code>optional int64 code = 2;</code>
-     */
-    public long getCode() {
-      return code_;
-    }
-    /**
-     * <code>optional int64 code = 2;</code>
-     */
-    public Builder setCode(long value) {
-      
-      code_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional int64 code = 2;</code>
-     */
-    public Builder clearCode() {
-      
-      code_ = 0L;
-      onChanged();
-      return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

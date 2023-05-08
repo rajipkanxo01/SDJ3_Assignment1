@@ -5,7 +5,7 @@ option java_package = "slaughterHouse.grpc.protobuf.animals";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
-import "products.proto";
+//import "products.proto";
 
 
 service AnimalService {
@@ -14,12 +14,11 @@ service AnimalService {
   rpc findAnimalsByOrigin(google.protobuf.StringValue) returns (AnimalListProto) {}
   rpc findAnimalsByType(google.protobuf.StringValue) returns (AnimalListProto) {}
   rpc findAnimalsByDate(google.protobuf.StringValue) returns (AnimalListProto) {}
-  rpc findProductsInvolved(google.protobuf.Int64Value) returns (ProductListProto);
+  //  rpc findProductsInvolved(google.protobuf.Int64Value) returns (ProductListProto);
 }
 
 message AnimalListProto {
   repeated AnimalProto allAnimals = 1;
-  int64 code = 2;
 }
 
 

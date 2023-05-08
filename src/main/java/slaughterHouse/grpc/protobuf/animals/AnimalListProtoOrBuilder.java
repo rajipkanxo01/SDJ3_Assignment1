@@ -30,9 +30,4 @@ public interface AnimalListProtoOrBuilder extends
    */
   slaughterHouse.grpc.protobuf.animals.AnimalProtoOrBuilder getAllAnimalsOrBuilder(
       int index);
-
-  /**
-   * <code>optional int64 code = 2;</code>
-   */
-  long getCode();
 }

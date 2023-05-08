@@ -31,26 +31,15 @@ public interface ProductProtoOrBuilder extends
   int getProductWeight();
 
   /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+   * <code>optional .AnimalListProto involvedAnimals = 4;</code>
    */
-  java.util.List<slaughterHouse.grpc.protobuf.animals.AnimalListProto> 
-      getInvolvedAnimalsList();
+  boolean hasInvolvedAnimals();
   /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+   * <code>optional .AnimalListProto involvedAnimals = 4;</code>
    */
-  slaughterHouse.grpc.protobuf.animals.AnimalListProto getInvolvedAnimals(int index);
+  slaughterHouse.grpc.protobuf.animals.AnimalListProto getInvolvedAnimals();
   /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
+   * <code>optional .AnimalListProto involvedAnimals = 4;</code>
    */
-  int getInvolvedAnimalsCount();
-  /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-   */
-  java.util.List<? extends slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder> 
-      getInvolvedAnimalsOrBuilderList();
-  /**
-   * <code>repeated .AnimalListProto involvedAnimals = 4;</code>
-   */
-  slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder getInvolvedAnimalsOrBuilder(
-      int index);
+  slaughterHouse.grpc.protobuf.animals.AnimalListProtoOrBuilder getInvolvedAnimalsOrBuilder();
 }
