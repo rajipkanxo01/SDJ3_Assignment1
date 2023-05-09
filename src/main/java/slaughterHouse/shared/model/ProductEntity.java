@@ -1,8 +1,6 @@
 package slaughterHouse.shared.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +13,8 @@ public class ProductEntity {
     private Long productId;
     private String productType;
     private int productWeight;
+
+    @OneToMany
     private List<AnimalEntity> involvedAnimals;
 
     public ProductEntity(String productType, int productWeight, List<AnimalEntity> involvedAnimals) {

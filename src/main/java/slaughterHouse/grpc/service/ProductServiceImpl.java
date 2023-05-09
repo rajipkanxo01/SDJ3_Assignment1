@@ -116,6 +116,5 @@ public class ProductServiceImpl extends ProductsServiceGrpc.ProductsServiceImplB
 
         productEntity.setInvolvedAnimals(animalEntities);
         return productEntity;
-
     }
 }

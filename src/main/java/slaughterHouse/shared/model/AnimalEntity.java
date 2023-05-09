@@ -1,9 +1,7 @@
 package slaughterHouse.shared.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -16,11 +14,15 @@ public class AnimalEntity {
     @Id
     @GeneratedValue
     private Long registrationNumber;
+
     private int weight;
+
     private LocalDate arrivalDate;
+
     private String origin;
+
     private String type;
-    private List<ProductEntity> involvedInProducts;
+//    private List<ProductEntity> involvedInProducts;
 
 
     public AnimalEntity() {
@@ -31,7 +33,7 @@ public class AnimalEntity {
         this.arrivalDate = arrivalDate;
         this.origin = origin;
         this.type = type;
-        involvedInProducts = new ArrayList<>();
+//        involvedInProducts = new ArrayList<>();
     }
 
     public void setRegistrationNumber(Long registrationNumber) {
@@ -74,13 +76,13 @@ public class AnimalEntity {
         this.type = type;
     }
 
-    public List<ProductEntity> getInvolvedInProducts() {
-        return involvedInProducts;
-    }
+//    public List<ProductEntity> getInvolvedInProducts() {
+//        return involvedInProducts;
+//    }
 
-    public void setInvolvedInProducts(List<ProductEntity> involvedInProducts) {
-        this.involvedInProducts = involvedInProducts;
-    }
+//    public void setInvolvedInProducts(List<ProductEntity> involvedInProducts) {
+//        this.involvedInProducts = involvedInProducts;
+//    }
 
     @Override
     public String toString() {
@@ -90,7 +92,7 @@ public class AnimalEntity {
                 ", arrivalDate=" + arrivalDate +
                 ", origin='" + origin + '\'' +
                 ", type='" + type + '\'' +
-                ", involvedInProducts=" + involvedInProducts +
+//                ", involvedInProducts=" + involvedInProducts +
                 '}';
     }
 
@@ -99,11 +101,11 @@ public class AnimalEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AnimalEntity animal = (AnimalEntity) o;
-        return weight == animal.weight && Objects.equals(registrationNumber, animal.registrationNumber) && Objects.equals(arrivalDate, animal.arrivalDate) && Objects.equals(origin, animal.origin) && Objects.equals(type, animal.type) && Objects.equals(involvedInProducts, animal.involvedInProducts);
+        return weight == animal.weight && Objects.equals(registrationNumber, animal.registrationNumber) && Objects.equals(arrivalDate, animal.arrivalDate) && Objects.equals(origin, animal.origin) && Objects.equals(type, animal.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(registrationNumber, weight, arrivalDate, origin, type, involvedInProducts);
+        return Objects.hash(registrationNumber, weight, arrivalDate, origin, type);
     }
 }

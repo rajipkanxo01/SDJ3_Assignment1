@@ -3,6 +3,7 @@ package slaughterHouse.shared.service.Product;
 import slaughterHouse.shared.model.AnimalEntity;
 import slaughterHouse.shared.model.ProductEntity;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface IProductService {
